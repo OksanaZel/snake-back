@@ -4,8 +4,9 @@ require("dotenv").config();
 const userRouter = require("./routes/user.routes");
 
 const app = express();
+
 app.get('/', (req, res)=>{
-  res.send("It works")
+  res.send("Hello")
 })
 
 app.use(
@@ -14,6 +15,7 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
+
 app.use(express.json());
 
 app.use("/api", userRouter);
