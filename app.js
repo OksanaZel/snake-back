@@ -4,6 +4,10 @@ require("dotenv").config();
 const userRouter = require("./routes/user.routes");
 
 const app = express();
+app.get('/', (req, res)=>{
+  res.send("It works")
+})
+
 app.use(
   cors({
     origin: "*",
