@@ -1,5 +1,5 @@
 create TABLE person(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    score INTEGER
+    score INT NOT NULL
 );
