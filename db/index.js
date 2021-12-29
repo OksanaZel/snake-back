@@ -1,5 +1,5 @@
-const db = require("./db");
+const sequelize = require('./db');
 
 module.exports = {
-  db,
+  sequelize,
 };

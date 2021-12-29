@@ -2,17 +2,17 @@ const Router = require('express');
 const router = new Router();
 const { controllerWrapper } = require('../middlewares');
 const {
-  createUser,
-  getUsers,
-  getUserById,
-  updateUserScore,
-  deleteUserById,
+  create,
+  getAll,
+  getById,
+  deleteById,
+  update,
 } = require('../controllers');
 
-router.post('/user', controllerWrapper(createUser));
-router.get('/user', controllerWrapper(getUsers));
-router.get('/user/:id', controllerWrapper(getUserById));
-router.put('/user/:id', controllerWrapper(updateUserScore));
-router.delete('/user/:id', controllerWrapper(deleteUserById));
+router.post('/user', controllerWrapper(create));
+router.get('/user', controllerWrapper(getAll));
+router.get('/user/:id', controllerWrapper(getById));
+router.put('/user/:id', controllerWrapper(update));
+router.delete('/user/:id', controllerWrapper(deleteById));
 
 module.exports = router;

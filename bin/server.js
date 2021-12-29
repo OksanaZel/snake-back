@@ -1,7 +1,18 @@
-const app = require("../app");
+const app = require('../app');
+const { sequelize } = require('../db');
 
 const { PORT = 4000 } = process.env;
 
-app.listen(PORT, () => {
-  console.log(`Server running. Use our API on port: ${PORT}`);
-});
+const start = async () => {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+start();
+
+module.exports = sequelize;

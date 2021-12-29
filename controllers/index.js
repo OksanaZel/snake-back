@@ -1,13 +1,13 @@
-const createUser = require('./createUser');
-const getUsers = require('./getUsers');
-const getUserById = require('./getUserById');
-const updateUserScore = require('./updateUserScore');
-const deleteUserById = require('./deleteUserById');
+const create = require('./create');
+const getAll = require('./getAll');
+const getById = require('./getById');
+const update = require('./update');
+const deleteById = require('./deleteById');
 
 module.exports = {
-  createUser,
-  getUsers,
-  getUserById,
-  updateUserScore,
-  deleteUserById,
+  create,
+  getAll,
+  getById,
+  update,
+  deleteById,
 };
