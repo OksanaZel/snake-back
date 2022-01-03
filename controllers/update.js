@@ -5,13 +5,22 @@ const { sendResponse } = require('../utils');
 const update = async (req, res) => {
   const { id } = req.params;
   const { score } = req.body;
-  const [user] = await User.update({ score }, { where: { id } });
+  const user = await User.update(
+    { score },
 
-  if (!user) {
-    throw new NotFound(`User with id ${id} not found`);
-  }
+    {
+      where: { id },
+      returning: true,
+      plain: true,
+    },
+  );
 
-  sendResponse(res, { message: 'Successfuly updated' });
+  // if (!user) {
+  //   throw new NotFound(`User with id ${id} not found`);
+  // }
+  const data = user[1].get();
+
+  sendResponse(res, data);
 };
 
 module.exports = update;

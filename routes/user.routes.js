@@ -12,7 +12,7 @@ const {
 router.post('/user', controllerWrapper(create));
 router.get('/user', controllerWrapper(getAll));
 router.get('/user/:id', controllerWrapper(getById));
-router.put('/user/:id', controllerWrapper(update));
+router.patch('/user/:id', controllerWrapper(update));
 router.delete('/user/:id', controllerWrapper(deleteById));
 
 module.exports = router;
